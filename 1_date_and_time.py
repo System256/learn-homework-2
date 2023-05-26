@@ -1,3 +1,5 @@
+from datetime import datetime, date, time, timedelta
+
 """
 Домашнее задание №2
 
@@ -9,19 +11,14 @@
 """
 
 def print_days():
-    """
-    Эта функция вызывается автоматически при запуске скрипта в консоли
-    В ней надо заменить pass на ваш код
-    """
-    pass
+    print(f"Вчера было: {(datetime.now() - timedelta(days=1)).strftime('%d.%m.%Y')}")
+    print(f"Сегодня: {datetime.now().strftime('%d.%m.%Y')}")
+    print(f"30 дней назад было: {(datetime.now() - timedelta(days=30)).strftime('%d.%m.%Y')}")
 
 
 def str_2_datetime(date_string):
-    """
-    Эта функция вызывается автоматически при запуске скрипта в консоли
-    В ней надо заменить pass на ваш код
-    """
-    pass
+    return f"Превращение строки {date_string} в объект {datetime.strptime(date_string, '%d/%m/%y %H:%M:%S.%f')}"
+
 
 if __name__ == "__main__":
     print_days()

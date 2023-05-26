@@ -11,12 +11,17 @@
 5. Сохраните результат в файл referat2.txt
 """
 
-def main():
-    """
-    Эта функция вызывается автоматически при запуске скрипта в консоли
-    В ней надо заменить pass на ваш код
-    """
-    pass
+def files_work():
+    with open('referat.txt', 'r', encoding='utf-8') as f:
+        text = f.read()
+        print(f"Длина строки всего файла: {len(text)} символов")
+        count_words_text = len(text.split(" "))
+        print(f"Количество слов в тексте: {count_words_text}")
+        new_text = text.replace(".", "!")
+
+    with open('referat2.txt', 'w', encoding='utf-8') as f:
+        f.write(new_text)
+
 
 if __name__ == "__main__":
-    main()
+    files_work()
